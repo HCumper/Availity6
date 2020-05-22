@@ -24,7 +24,7 @@ namespace Availity6
                     while (parser.PeekChars(1) != null)
                     {
                         string[] elements = parser.ReadFields();
-                        CSVRow newRow = new CSVRow() { UniqueId = id++, UserId = elements[0], FullName = elements[1], Version = Int32.Parse(elements[2]), InsuranceCompany = elements[3] };
+                        CSVRow newRow = new CSVRow() { UniqueId = id++, UserId = elements[0], FullName = elements[1], Version = Int32.Parse(elements[2]), InsuranceCompany = (elements.Length == 4) ? elements[3] : "" };
                         fileRows.Add(newRow);
                     }
                 }
